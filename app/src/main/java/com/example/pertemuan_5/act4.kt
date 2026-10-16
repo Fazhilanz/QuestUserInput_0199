@@ -23,6 +23,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 
 private fun ColumnScope.OutlinedTextField(
@@ -107,7 +108,18 @@ fun FormDataDiri(modifier: Modifier){
                 jenis   = textJK
                 alamat=textAlamat
             }
-        ) { }
+        ) {
+            Text(stringResource(R.string.submit))
+
+        }
+        HorizontalDivider(
+            modifier = modifier.padding(
+                bottom =
+                    dimensionResource(R.dimen.padding_medium), top = dimensionResource(
+                        R.dimen.padding_medium
+                    )
+            ),
+        )
         )
     }
 }
