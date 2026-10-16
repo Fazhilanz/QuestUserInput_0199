@@ -30,15 +30,6 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 
-private fun ColumnScope.OutlinedTextField(
-    value: String,
-    singleLine: Boolean,
-    modifier: Modifier,
-    Label: () -> Unit,
-    onValueChange: () -> Unit
-) {
-}
-
 @Composable
 fun FormDataDiri(modifier: Modifier){
     //variable variable untuk mengingat nilai masukan dari keyboard
@@ -50,7 +41,7 @@ fun FormDataDiri(modifier: Modifier){
     var nama by remember { mutableStateOf("") }
     var alamat by remember { mutableStateOf("")}
     var jenis by remember { mutableStateOf("") }
-    var gender:List<String> = listOf("laki-laki","perempuan")
+    val gender:List<String> = listOf("laki-laki","perempuan")
 
     Column(modifier = Modifier.padding(top = 50.dp),
         verticalArrangement = Arrangement.Top,
