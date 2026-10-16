@@ -3,25 +3,37 @@ package com.example.pertemuan_5
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 
 @Composable
 fun FormDataDiri(modifier: Modifier){
     //variable variable untuk mengingat nilai masukan dari keyboard
-    var textNama by remember { mutableMapOf(value="") }
-    var textAlamat by remember { mutableListOf(value="") }
-    var textJK by remember { mutableMapOf(value="") }
+    var textNama by remember { mutableStateOf("") }
+    var textAlamat by remember { mutableStateOf("") }
+    var textJK by remember { mutableStateOf("") }
 
     //variabel-variable untuk menyimpan data yang di peroleh dari komponen UI
-    var nama by remember { mutableMapOf(value="") }
-    var alamat by remember { mutableMapOf(value="" }
-    var jenis by remember { mutableMapOf(value="") }
+    var nama by remember { mutableStateOf("") }
+    var alamat by remember { mutableStateOf("")}
+    var jenis by remember { mutableStateOf("") }
     var gender:List<String> = listOf("laki-laki","perempuan")
 
     Column(modifier = Modifier.padding(top = 50.dp),
         verticalArrangement = Arrangement.Top,
-        horizontalAlignment = Alignment.CenterHorizontally) { }
+        horizontalAlignment = Alignment.CenterHorizontally) {
+        OutlinedTextField(
+            value = textNama,
+            singleLine = true,
+
+        )
+        )
+    }
 }
